@@ -1,0 +1,10 @@
+{
+	"database": {
+		"host": "localhost",
+		"port": 3306,
+		"database": "leisure",
+		"user": "user",
+		"password": "password",
+		"connectionLimit": 5
+	}
+}

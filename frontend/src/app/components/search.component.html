@@ -1,0 +1,17 @@
+<form #form="ngForm" fxLayout="column" (ngSubmit)="processForm()">
+
+    <mat-form-field fxFlex>
+        <input type="text" matInput name="q" required placeholder="TV show name" ngModel>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <button type="reset" mat-raised-button>
+            <mat-icon>clear</mat-icon>
+            Clear
+        </button>
+        <button type="submit" mat-raised-button color="accent" [disabled]="form.invalid">
+            Search
+        </button>
+    </div>
+
+</form>

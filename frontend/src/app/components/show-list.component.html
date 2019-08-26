@@ -1,0 +1,5 @@
+<mat-action-list>
+    <button mat-list-item *ngFor="let i of tvShows; let idx = index" (click)="show(idx)">
+        {{ i.name | uppercase }}
+    </button>
+</mat-action-list>

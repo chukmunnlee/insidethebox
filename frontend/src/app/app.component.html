@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <img src="/assets/tv.png" class="toolbar-icon" (click)="home()">
+        <span>TV Shows</span>
+    </div>
+    <div>
+      <button mat-icon-button (click)="search()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+.image-size {
+    width: 70%;
+}
+
+.title-size {
+    font-size: 2em;
+}
+
+.content-size, .subtitle-size {
+    font-size: 1.5em;
+}

@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="title-size">{{ tvShow.name }}</mat-card-title>
+        <mat-card-subtitle class="subtitle-size">Rating: {{ tvShow.rating }}</mat-card-subtitle>
+    </mat-card-header>
+    <div fxLayout="row" fxLayoutAlign="center" style="margin: 5vh;">
+        <img mat-card-image [src]="tvShow.image" class="image-size">
+    </div>
+    <mat-card-content [innerHtml]="tvShow.summary" class="content-size"></mat-card-content>
+</mat-card>
