@@ -63,7 +63,7 @@ COPY --from=build_env ${BE_DIR}/dist ${BE_DIR}/dist
 RUN npm install --production
 
 HEALTHCHECK --interval=1m --timeout=10s \
-	CMD curl -fs http://localhost:${APP_PORT}/admin/health || exit 1
+	CMD curl -fs http://localhost:${APP_PORT}/api/admin/health || exit 1
 
 EXPOSE ${APP_PORT}
 
