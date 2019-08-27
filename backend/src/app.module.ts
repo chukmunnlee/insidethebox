@@ -6,7 +6,7 @@ import { AngularModule } from './angular/angular.module';
 
 @Module({
     imports: [ TvModule, AdminModule,
-        AngularModule.forRoot({ rootPath: '../frontend/dist/frontend' }) 
+        AngularModule.forRoot({ rootPath: '../frontend/dist/frontend', renderPath: '/' }) 
     ],
     controllers: [AppController ],
     providers: [ ],
