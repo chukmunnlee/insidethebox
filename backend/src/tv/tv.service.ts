@@ -89,24 +89,32 @@ export class TvService implements OnModuleInit, OnModuleDestroy, OnApplicationSh
     }
 
     onModuleInit(): Promise<void> {
-        return new Promise((resolve, reject) => {
-            console.info('Creating connection pool')
-            this.pool.getConnection((err: MysqlError, conn) => {
-                if (err) {
-                    console.error('Cannot connect to database: ', err)
-                    return (reject());
-                }
-                conn.ping((err) => {
-                    conn.release();
-                    if (err) {
-                        console.error('Cannot ping database: ', err)
-                        return (reject())
-                    }
-                    console.info('Created connection pool')
+        console.info(`Waiting for database to be ready: ${config.waitTime} seconds`);
+        return (
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
                     resolve()
+                }, config.waitTime * 1000)
+            })
+            .then(() => {
+                console.info('Creating connection pool')
+                this.pool.getConnection((err: MysqlError, conn) => {
+                    if (err) {
+                        console.error('Cannot connect to database: ', err)
+                        return (Promise.reject());
+                    }
+                    conn.ping((err) => {
+                        conn.release();
+                        if (err) {
+                            console.error('Cannot ping database: ', err)
+                            return (Promise.reject())
+                        }
+                        console.info('Created connection pool')
+                        return (Promise.resolve());
+                    })
                 })
             })
-        });
+        );
     }
 
     onModuleDestroy() {

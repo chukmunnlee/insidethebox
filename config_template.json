@@ -6,5 +6,6 @@
 		"user": "root",
 		"password": "rootroot",
 		"connectionLimit": 5
-	}
+	},
+	"waitTime": 60
 }
