@@ -20,6 +20,6 @@ services:
     environment: 
     - APP_PORT=3000
     ports:
-    - 8080-8090:3000
+    - 80:3000
     networks:
     - appnet
