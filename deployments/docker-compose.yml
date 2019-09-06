@@ -3,11 +3,16 @@ version: "3.7"
 networks: 
   appnet:
 
+volumes:
+   data-vol:
+
 services: 
   database:
     image: chukmunnlee/leisuredb:v1
     build:
       context: ./data
+    volumes:
+    - data-vol:/var/lib/mysql
     networks:
     - appnet
 
